@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        
+        int s = nums.size();
+        //it stores the count of a nums array
+        int count = 0;
+        //it stores the count of all the number from 0 to n
+        int numCount = 0;
+
+        for(int i=0; i<s; i++){
+            count = count + nums[i];
+        }
+
+        for(int j=0; j<=s; j++){
+            numCount = numCount + j;
+        }
+
+        int ans = numCount - count;
+
+        return ans;
+
+    }
+};
